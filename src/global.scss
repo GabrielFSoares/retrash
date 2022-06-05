@@ -1,0 +1,120 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800&display=swap');
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.btn-success, .btn-outline-success:active {
+    background-color: #4F972D;
+}
+
+.btn-outline-success {
+    color: #4F972D;
+}
+
+.btn-success, .btn-success:active, .btn-outline-success, .btn-outline-success:active {
+    border-color: #4F972D;
+}
+
+
+:root{
+    --color-green: #4F972D;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-andamento: #0198CA;
+    --color-pendente: #f7a117;
+}
+
+* {
+    //font-family: 'Brush Script MT', cursive;
+    font-family: 'Baloo 2', cursive !important;
+}
+
+@media only screen and (min-width: 768px) {
+    p{
+        font-size: 30px;
+    }
+
+    h5 {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    p{
+        font-size: 25px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 380px) and (max-width: 479px) {
+    p{
+        font-size: 22px;
+    }
+
+    h5 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 285px) and (max-width: 379px) {
+    p{
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 284px) {
+    p{
+        font-size: 18px;
+    }
+
+    h5 {
+        font-size: 10px;
+    }
+}
+
+
+.img{
+    border-radius: 3px !important;
+    overflow: hidden;
+}
+
+.colorGreen {
+    color: #4F972D;
+}
+
+a {
+    text-decoration: none;
+}

@@ -1,0 +1,75 @@
+header{
+    z-index: 2;
+}
+
+#voltar {
+    position: absolute;
+    top: 14px;
+    font-size: 25px;
+}
+
+.caixa {
+    position: relative;
+    gap: 10px;
+    padding: 5px;
+    margin: 0 5px;
+    width: 150px;
+    margin-bottom: 35px;
+}
+
+.img {
+    width: 25px;
+    z-index: 0;
+}
+
+.img2 {
+    width: 80px;
+    border-radius: 10px;
+    z-index: 0;
+}
+.buttonCopy{
+    padding: 6px;
+    text-align: center;
+    border-radius: 4px;
+
+    .copy{
+        margin-right: 6px;
+    }
+}
+
+span {
+    font-size: 12px;
+}
+.textPonto{
+    position: relative;
+    ion-skeleton-text{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+}
+.pontosAndLogo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.skeleton{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto {
+    margin-bottom: 0px;
+    p{
+        font-size: 0.8rem;
+    }
+   
+}
+
+article button {
+    background-color: #4F972D;
+}

@@ -1,0 +1,116 @@
+<ion-content [fullscreen]="true">
+  <header class="position-fixed bg-white w-100">
+    <div class="container mt-3">
+      <div>
+        <p class="text-center colorGreen fw-bold">Trocar Pontos</p>
+      </div>
+      <div id="voltar">
+        <a class="text-dark" [routerLink]="['../tab2']" routerDirection="forward" (click)="navegar('tabs/tab2')">
+          <fa-icon id="menu" class="text-secondary" [icon]="faArrowLeft"></fa-icon>
+        </a>
+      </div>
+
+    </div>
+  </header>
+  <article *ngIf="!verificarStatusPontos" class="mt-5 w-100">
+    <div class="row col-12 text-end colorGreen">
+      <p class="m-2 mt-5">Pontos: {{tabInfoPontos.pontos}}</p>
+    </div>
+    <section class="row justify-content-evenly mx-auto">
+      <div class="col-6 shadow caixa" *ngFor="let produto of produtos">
+        <div class="row justify-content-between mb-2">
+          <div class="col-4">
+            <ion-img src={{produto.logoEmpresa}} class="img shadow"></ion-img>
+          </div>
+          <div class="col-8">
+            <span class="colorGreen fw-bold">{{produto.pontos}} </span><span class="fw-bold">pontos</span>
+          </div>
+        </div>
+        <div class="text-center mb-2">
+          <img src={{produto.imagem}} class="img2 shadow">
+        </div>
+        <div class="texto">
+          <p>{{produto.descricao}}</p>
+        </div>
+        <div class="text-center mb-2">
+          <button *ngIf="tabInfoPontos.pontos < produto.pontos " class="btn text-white" disabled>Trocar</button>
+          <button *ngIf="tabInfoPontos.pontos >= produto.pontos " class="btn text-white"
+            (click)="open(modalConfirmTroca, produto)">Trocar</button>
+        </div>
+      </div>
+    </section>
+  </article>
+
+  <article *ngIf="verificarStatusPontos" class="mt-5 w-100">
+    <div class="row col-12 mb-3 text-right textPonto">
+      <p class="m-2 mt-5">
+        <ion-skeleton-text animated style="width: 80px; text-align: center"></ion-skeleton-text>
+      </p>
+    </div>
+    <section class="row justify-content-evenly mx-auto">
+      <div class="col-6 shadow caixa" *ngFor="let produto of produtos">
+        <div class="row  pontosAndLogo mb-2">
+          <div class="col-4">
+            <ion-skeleton-text animated class="img shadow" style="width: 25px; height: 25px"></ion-skeleton-text>
+          </div>
+          <div class="col-8">
+            <span>
+              <ion-skeleton-text animated style="width: 80px"></ion-skeleton-text>
+            </span>
+          </div>
+        </div>
+        <div class="text-center mb-2 skeleton">
+          <ion-skeleton-text animated class="shadow" style="width: 60px; height: 60px; text-align: center">
+          </ion-skeleton-text>
+        </div>
+        <div class="texto">
+          <p>
+            <ion-skeleton-text animated style="width: 100%"></ion-skeleton-text>
+          </p>
+        </div>
+        <div class="text-center mb-2 skeleton">
+
+          <ion-skeleton-text animated class="btn" style="width: 50px; height: 20px"></ion-skeleton-text>
+
+        </div>
+      </div>
+    </section>
+  </article>
+
+   <!-- Modal Confirma Troca-->
+   <ng-template #modalConfirmTroca let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-title">Deseja realizar a troca?</h4>
+      <button type="button" class="close" aria-describedby="modal-title" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="d('cancel click')">Cancelar</button>
+      <button type="button" class="btn btn-success" (click)="c('Ok click'); setProduto(); open(modalTroca)">Ok</button>
+    </div>
+  </ng-template>
+
+   <!-- Modal Troca Realizada-->
+   <ng-template #modalTroca let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title colorGreen" id="modal-title">Troca realizada!</h4>
+      <button type="button" class="close" aria-describedby="modal-title" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="text-center modal-body">
+      <p>Cupom: <span>{{code}}</span></p>
+      <button class="buttonCopy" (click)="copyCode(code)">
+        <fa-icon class="copy" size="1x" [icon]="faCopy"></fa-icon>
+        Copiar cupom</button>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" (click)="c('Ok click')">Ok</button>
+    </div>
+  </ng-template>
+
+</ion-content>

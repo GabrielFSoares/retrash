@@ -1,0 +1,17 @@
+<ion-tabs >
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" (click)="selectMenu('/tabs/tab1')">
+      <fa-icon id="parceiros" class="text-secondary" size="2x" [icon]="faHandshake"></fa-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" (click)="selectMenu('/tabs/tab2')">
+      <fa-icon id="home" class="colorGreen" size="2x" [icon]="faHome"></fa-icon>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab3" (click)="selectMenu('/tabs/tab3')">
+      <fa-icon id="menut" class="text-secondary" size="2x" [icon]="faBars"></fa-icon>
+    </ion-tab-button>
+  </ion-tab-bar>
+
+</ion-tabs>

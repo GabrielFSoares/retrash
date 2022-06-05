@@ -1,0 +1,48 @@
+ion-icon {
+    position: relative;
+    top: 10px;
+    margin-right: 5px;
+}
+
+.section1 a:active {
+    background-color: rgba($color: #000000, $alpha: 0.1);
+}
+
+input[type=text]{
+    border: none;
+    outline: 0;
+}
+
+.informacaoUsuario{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icont{
+    top: 0;
+    cursor: pointer;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none !important;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield !important;
+   appearance: textfield !important;
+
+}
+
+.section1 div {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding-top: 15px;
+}
+
+.section1 a div p {
+    margin-left: 13px;
+}
+
+.logo{
+    width: 3rem;
+}

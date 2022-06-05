@@ -1,0 +1,7 @@
+{
+  "name": "retrash",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

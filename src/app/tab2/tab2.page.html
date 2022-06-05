@@ -1,0 +1,70 @@
+<ion-content [fullscreen]="true">
+
+  <header class="position-fixed w-100 bg-white">
+    <div class="container row justify-content-between mt-3 mx-auto">
+      <div class="col-6 colorGreen logo">
+        <ion-img src="assets/logoRetrash.png" alt="Logo"></ion-img>
+        <!--<p class="fw-bold">Retrash</p>-->
+      </div>
+      <div class="col-6 text-end colorGreen">
+        <p>Pontos: {{pontos}}</p>
+      </div>
+    </div>
+  </header>
+
+  <article class="container mt-5 pt-5">
+    <section class="mx-4">
+      <div class="row">
+        <button class="button" [routerLink]="['../perfil']" routerDirection="forward" (click)="navegar()">
+          <ion-img src="assets/meuperfil.png"  class="img"></ion-img>
+        </button>
+      </div>
+        
+      <div class="row mx-auto">
+        <div class="col-6 p-0 ">
+          <button class="button pt-3 ps-0 float-end" [routerLink]="['../solicitar-coleta']" routerDirection="forward"  (click)="navegar()"> 
+            <ion-img src="assets/solicitar.png" class="img"></ion-img>
+          </button>
+        </div>
+        <div class="col-6 p-0">
+          <button class="button pt-3 pe-0 float-start" [routerLink]="['../trocar-pontos']" routerDirection="forward"  (click)="navegar()">
+            <ion-img src="assets/trocar.png"  class="img"></ion-img>
+          </button>        
+        </div>
+      </div>
+  
+    </section>
+
+    <section class="mx-4">
+      <p class="mt-5 mb-4 colorGreen fw-bold">Informações</p>
+
+      <div class="row mx-auto">
+        <div class="col-6 p-0">
+          <button class="button ps-0 float-end" (click)="selectInformation('reciclar')">
+            <ion-img src="assets/oquereciclar.png" class="img"></ion-img>
+          </button>
+        </div>
+        <div class="col-6 p-0">
+          <button class="button pe-0 float-start" (click)="selectInformation('funciona')">
+            <ion-img src="assets/comofunciona.png" class="img"></ion-img>
+          </button>        
+        </div>
+      </div>
+
+      <div class="row mx-auto mb-5">
+        <div class="col-6 p-0">
+          <button class="button pt-3 ps-0 float-end" (click)="selectInformation('estatisticas')">
+            <ion-img src="assets/estatisticas.png" class="img"></ion-img>
+
+          </button>
+        </div>
+        <div class="col-6 p-0">
+          <button class="button pt-3 pe-0 float-start" (click)="selectInformation('suporte')"> 
+            <ion-img src="assets/suporte.png" class="img"></ion-img>
+          </button>        
+        </div>
+      </div>
+    </section>
+  </article>
+
+</ion-content>

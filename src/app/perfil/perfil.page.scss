@@ -1,0 +1,201 @@
+ion-header{
+    position: relative;
+    width: 100%;
+    height: 88px;
+    --opacity: 0;
+ }
+
+
+ input[type='file'] {
+    display: none;
+  }
+
+.icon-edite{
+    display: none;
+}
+.icon-edite{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    
+    width: 100%;
+    height:100%;
+    border-radius: 50%;
+
+    .ion-icon{
+        position: absolute;
+        bottom: 0px;
+        font-size: 18px;
+        box-shadow: 0 0 2px 0 black;
+        right: -4px;
+        background-color: white;
+        padding: 4px;
+        border-radius: 50%;
+        text-align: center;
+        color: black;
+    }
+}
+ .inputImagem{
+    position: relative;
+    background-color: white;
+    color: #fff;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    z-index: 8;
+    img{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+ }
+ ion-thumbnail{
+    --size: 16rem;
+ }
+ img{
+     height: 100%;
+     width: 100%;
+     
+ }
+ .garrafas, .latinha, .papel, .oleo{
+    position: relative;
+    background-image: url('../../assets/testgarrafa.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: cover;
+    z-index: 0;
+    border-radius: 10px;
+}
+ .garrafas{
+     background-image: url('../../assets/testgarrafa.jpg');
+ }
+ .latinha{
+    background-image: url('../../assets/latinha.jpg');
+ }
+ .papel{
+    background-image: url('../../assets/latinha.jpg');
+ }
+ .oleo{
+    background-image: url('../../assets/oleo.jpg');
+ }
+ .titulo{
+     font-size: 1.4rem;
+ }
+ .information{
+    position: absolute;
+    background-color: rgba(0,0,0,0.4);
+    bottom: 0;
+    top: 0;
+    text-align: center;
+    right: 0;
+    left: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    span{
+        display: block;
+        font-size: 1.2rem;
+    }
+}
+ ion-col{
+     height: 220px;
+     border-radius: 4px;
+ }
+ .header-section{
+     position: relative;
+     width: 100%;
+     height: 88px;
+     background: url('../../assets/rectangle.png')  no-repeat center center;
+     background-size: cover;
+    .icon{
+        position: absolute;
+        padding: 5px;
+        top: 0;
+        cursor: pointer;
+
+        #icon-arrow {
+            fill: white;
+        }
+    }
+ 
+    .avatar{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: -36px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        span{
+            display: block;
+        }
+    }
+ }
+
+ button{
+    position: relative;
+    background: transparent !important;
+   
+    
+   
+    .information{
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        right: 0;
+        left: 0;
+        color: white;
+
+        span{
+            display: block;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+
+
+ .menu-footer{
+     text-align: center;
+
+    .menu-footer-container{
+        display: inline-block;
+    }
+
+     .option-menu{
+        display: flex;
+        margin: 20px 0 30px 0;
+        cursor: pointer;
+     }
+
+     .icon-footer{
+        margin-right: 14px;
+        text-align: center;
+        padding: 0;
+     }
+ }
+
+.nameOfPontos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+ 

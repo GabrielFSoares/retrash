@@ -1,0 +1,171 @@
+<ion-header>
+  <ion-toolbar>
+    <span class="icon" (click)="navegar('tabs/tab2', 'nenhum')">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0)">
+          <path id="icon-arrow" d="M20.6777 9.45578C20.5877 9.44117 20.4966 9.43443 20.4054 9.43561H4.88485L5.22328 9.2782C5.55408 9.12163 5.85503 8.90854 6.11264 8.64857L10.465 4.29621C11.0382 3.74902 11.1345 2.86876 10.6932 2.21055C10.1796 1.50914 9.19471 1.35685 8.49325 1.87045C8.43659 1.91196 8.38272 1.95722 8.33211 2.00592L0.461663 9.87636C-0.153412 10.4907 -0.153953 11.4874 0.460433 12.1025C0.460827 12.1029 0.46127 12.1033 0.461663 12.1037L8.33211 19.9741C8.94767 20.588 9.94432 20.5866 10.5582 19.971C10.6065 19.9226 10.6516 19.871 10.6932 19.8167C11.1345 19.1585 11.0382 18.2783 10.465 17.7311L6.12051 13.3708C5.88956 13.1396 5.62403 12.9458 5.33347 12.7963L4.86124 12.5838H20.3188C21.1229 12.6136 21.8284 12.0519 21.9795 11.2616C22.1186 10.4034 21.5358 9.59499 20.6777 9.45578Z" fill="white"/>
+        </g>
+        <defs>
+          <clipPath id="clip0">
+            <rect width="22" height="22" fill="white"/>
+          </clipPath>
+        </defs>
+      </svg>
+    </span>
+    <ion-title>Solicitar Coleta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <div class="titleAndQuant">
+      <ion-card-header>
+        <ion-card-title>Oleo</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content class="info">
+       <button class="icon-sub" (click)="subtrair('oleo')">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.5 5.5V6.5H8.5V5.5H3.5ZM6 1C3.24 1 1 3.24 1 6C1 8.76 3.24 11 6 11C8.76 11 11 8.76 11 6C11 3.24 8.76 1 6 1ZM6 10C3.795 10 2 8.205 2 6C2 3.795 3.795 2 6 2C8.205 2 10 3.795 10 6C10 8.205 8.205 10 6 10Z" fill="#4F972D"/>
+          </svg>
+        </button>
+        <span class="quant"><input type="number" [ngChange]="calcularPontos()" [(ngModel)]="objeto.oleo"></span>
+        <button class="icon-soma" (click)="somar('oleo')">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5 2.5H4.5V4.5H2.5V5.5H4.5V7.5H5.5V5.5H7.5V4.5H5.5V2.5ZM5 0C2.24 0 0 2.24 0 5C0 7.76 2.24 10 5 10C7.76 10 10 7.76 10 5C10 2.24 7.76 0 5 0ZM5 9C2.795 9 1 7.205 1 5C1 2.795 2.795 1 5 1C7.205 1 9 2.795 9 5C9 7.205 7.205 9 5 9Z" fill="#4F972D"/>
+          </svg>
+        </button>
+        <span class="infoQuant">L</span>
+      </ion-card-content>
+    </div>
+    <div>
+      <ion-img src="assets/oleo-img.png"></ion-img>
+    </div>
+  </ion-card>
+  <ion-card>
+    <div>
+      <ion-card-header>
+        <ion-card-title>Garrafas</ion-card-title>
+      </ion-card-header>
+      
+      <ion-card-content class="info">
+       <button class="icon-sub" (click)="subtrair('garrafa')">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.5 5.5V6.5H8.5V5.5H3.5ZM6 1C3.24 1 1 3.24 1 6C1 8.76 3.24 11 6 11C8.76 11 11 8.76 11 6C11 3.24 8.76 1 6 1ZM6 10C3.795 10 2 8.205 2 6C2 3.795 3.795 2 6 2C8.205 2 10 3.795 10 6C10 8.205 8.205 10 6 10Z" fill="#4F972D"/>
+          </svg>
+        </button>
+        <span class="quant"><input type="number" [(ngModel)]="objeto.garrafa"></span>
+        <button class="icon-soma" (click)="somar('garrafa')">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5 2.5H4.5V4.5H2.5V5.5H4.5V7.5H5.5V5.5H7.5V4.5H5.5V2.5ZM5 0C2.24 0 0 2.24 0 5C0 7.76 2.24 10 5 10C7.76 10 10 7.76 10 5C10 2.24 7.76 0 5 0ZM5 9C2.795 9 1 7.205 1 5C1 2.795 2.795 1 5 1C7.205 1 9 2.795 9 5C9 7.205 7.205 9 5 9Z" fill="#4F972D"/>
+          </svg>
+        </button>
+        <span class="infoQuant">unid.</span>
+      </ion-card-content>
+    </div>
+    <div>
+      <ion-img src="assets/garrafas-img.png"></ion-img>
+    </div>
+  </ion-card>
+  <ion-card>
+    <div>
+      <ion-card-header>
+        <ion-card-title>Latinhas</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content class="info">
+       <button class="icon-sub" (click)="subtrair('latinha')">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.5 5.5V6.5H8.5V5.5H3.5ZM6 1C3.24 1 1 3.24 1 6C1 8.76 3.24 11 6 11C8.76 11 11 8.76 11 6C11 3.24 8.76 1 6 1ZM6 10C3.795 10 2 8.205 2 6C2 3.795 3.795 2 6 2C8.205 2 10 3.795 10 6C10 8.205 8.205 10 6 10Z" fill="#4F972D"/>
+          </svg>
+        </button>
+        <span class="quant"><input type="number" [(ngModel)]="objeto.latinha"></span>
+        <button class="icon-soma" (click)="somar('latinha')">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5 2.5H4.5V4.5H2.5V5.5H4.5V7.5H5.5V5.5H7.5V4.5H5.5V2.5ZM5 0C2.24 0 0 2.24 0 5C0 7.76 2.24 10 5 10C7.76 10 10 7.76 10 5C10 2.24 7.76 0 5 0ZM5 9C2.795 9 1 7.205 1 5C1 2.795 2.795 1 5 1C7.205 1 9 2.795 9 5C9 7.205 7.205 9 5 9Z" fill="#4F972D"/>
+          </svg>
+        </button>
+        <span class="infoQuant">unid.</span>
+      </ion-card-content>
+    </div>
+    <div>
+      <ion-img src="assets/latinhas-img.png"></ion-img>
+    </div>
+  </ion-card>
+  <div *ngIf="100 - valorTotalPontos >= 0" class="px-3 m-0 text-left colorGreen">
+    <p>Faltam <span>{{100 - valorTotalPontos}}</span> ponto(s)</p>
+  </div>
+  <!--<ion-card>
+    <div>
+      <ion-card-header>
+        <ion-card-title>Papel</ion-card-title>
+      </ion-card-header>
+    
+      <ion-card-content class="info">
+       <button class="icon-sub" (click)="subtrair('papel')">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3.5 5.5V6.5H8.5V5.5H3.5ZM6 1C3.24 1 1 3.24 1 6C1 8.76 3.24 11 6 11C8.76 11 11 8.76 11 6C11 3.24 8.76 1 6 1ZM6 10C3.795 10 2 8.205 2 6C2 3.795 3.795 2 6 2C8.205 2 10 3.795 10 6C10 8.205 8.205 10 6 10Z" fill="#4F972D"/>
+          </svg>
+        </button>
+        <span class="quant"><input type="number" [(ngModel)]="objeto.papel"></span>
+        <button class="icon-soma" (click)="somar('papel')">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5 2.5H4.5V4.5H2.5V5.5H4.5V7.5H5.5V5.5H7.5V4.5H5.5V2.5ZM5 0C2.24 0 0 2.24 0 5C0 7.76 2.24 10 5 10C7.76 10 10 7.76 10 5C10 2.24 7.76 0 5 0ZM5 9C2.795 9 1 7.205 1 5C1 2.795 2.795 1 5 1C7.205 1 9 2.795 9 5C9 7.205 7.205 9 5 9Z" fill="#4F972D"/>
+          </svg>
+        </button>
+        <span class="infoQuant">KG</span>
+      </ion-card-content>
+    </div>
+    <div>
+      <ion-img src="assets/papel-img.png"></ion-img>
+    </div>
+  </ion-card>-->
+  <div class="btn-solicitar">
+    <button (click)="open(modalColeta)">Solicitar</button>
+  </div>
+
+  <!-- Modal Solicitar Coleta-->
+  <ng-template #modalColeta let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title colorGreen fw-bold">Confirmar solicitação</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="itens">
+        <span *ngIf="objeto.oleo > 0">Oleo - {{objeto.oleo}} L</span>
+        <span *ngIf="objeto.latinha > 0">Latinha - {{objeto.latinha}} unid.</span>
+        <span *ngIf="objeto.garrafa > 0">Garrafa - {{objeto.garrafa}} unid.</span>
+        <span *ngIf="objeto.papel > 0">Papel - {{objeto.papel}} KG</span>
+      </div>
+      <span>Pontos: {{valorTotalPontos}}</span>
+
+      <form [formGroup]="form">
+        <div class="mt-4">
+          <label class="form-label" for="data">Selecione uma data:</label>
+          <input class="form-control" type="date" formControlName="data" name="data">
+
+          <label class="form-label mt-2">Selecione um intervalo de horários:</label>
+          <div class="row">
+            <div class="col-5">
+              <input class="form-control form-control-sm" formControlName="horario1" type="time">
+            </div>
+            <div class="col-2">
+              <p class="text-center">às</p>
+            </div>
+            <div class="col-5">
+              <input class="form-control form-control-sm" formControlName="horario2" type="time" >
+            </div>
+          </div>
+        </div>
+      </form>  
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline-danger" (click)="d('Cross click')">Cancelar</button>
+        <button type="submit" [disabled]="!form.valid" class="btn btn-outline-success" (click)="c('Save click'); confirmarSolicitacao('Gabriel', 'gabiewdwldw')">Confirmar</button>
+      </div>
+  </ng-template>
+  
+</ion-content>

@@ -1,0 +1,48 @@
+
+
+ion-content {
+    section{
+        background: url("../../assets/folhas.png") top;
+        background-repeat: repeat-x;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        height: 100%;
+
+        ion-img {
+            width: 6rem;            
+        }
+    }   
+}
+
+ion-toolbar{
+    section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        button{
+            width: 6.8rem;
+            padding: 4px;
+            font-family: 'Baloo 2', cursive;
+            font-weight: 800;
+            font-size: 0.8rem;
+            border: 2px solid var(--color-green);
+            border-radius: 2px;
+        }
+
+        .btn-login{
+            background: var(--color-white) !important;
+            color: var(--color-green);  
+        }
+
+        .btn-registrar{
+            background: var(--color-green);
+            color: var(--color-white);   
+        }
+    }
+}

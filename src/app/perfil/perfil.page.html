@@ -1,0 +1,164 @@
+<ion-content>
+
+  <ion-header translucent="false">
+    <section class="header-section">
+      <span class="icon" (click)="navegar('tabs/tab2', 'test')">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0)">
+            <path id="icon-arrow"
+              d="M20.6777 9.45578C20.5877 9.44117 20.4966 9.43443 20.4054 9.43561H4.88485L5.22328 9.2782C5.55408 9.12163 5.85503 8.90854 6.11264 8.64857L10.465 4.29621C11.0382 3.74902 11.1345 2.86876 10.6932 2.21055C10.1796 1.50914 9.19471 1.35685 8.49325 1.87045C8.43659 1.91196 8.38272 1.95722 8.33211 2.00592L0.461663 9.87636C-0.153412 10.4907 -0.153953 11.4874 0.460433 12.1025C0.460827 12.1029 0.46127 12.1033 0.461663 12.1037L8.33211 19.9741C8.94767 20.588 9.94432 20.5866 10.5582 19.971C10.6065 19.9226 10.6516 19.871 10.6932 19.8167C11.1345 19.1585 11.0382 18.2783 10.465 17.7311L6.12051 13.3708C5.88956 13.1396 5.62403 12.9458 5.33347 12.7963L4.86124 12.5838H20.3188C21.1229 12.6136 21.8284 12.0519 21.9795 11.2616C22.1186 10.4034 21.5358 9.59499 20.6777 9.45578Z"
+              fill="white" />
+          </g>
+          <defs>
+            <clipPath id="clip0">
+              <rect width="22" height="22" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </span>
+      <div class="avatar" *ngIf="!imagemFundo">
+        <ion-avatar class="text-center">
+          <label class="inputImagem" for="avatarImg">
+            <ion-skeleton-text animated style="height: 100%"></ion-skeleton-text>
+            <span class="icon-edite">
+
+            </span>
+          </label>
+        </ion-avatar>
+        <input id="avatarImg" type="file" loading="lazy" accept="image/*"
+          (change)="handleFileInput($event.target.files)">
+        <br>
+      </div>
+      <div class="avatar" *ngIf="imagemFundo">
+        <ion-avatar class="text-center">
+          <label class="inputImagem" for="avatarImg">
+            <img src={{tabInfo.informacoesDoUsuario.avatar}} alt="foto de perfil">
+            <span class="icon-edite">
+              <ion-icon class="ion-icon" name="camera-outline"></ion-icon>
+            </span>
+          </label>
+        </ion-avatar>
+        <input id="avatarImg" type="file" loading="lazy" accept="image/*"
+          (change)="handleFileInput($event.target.files)">
+        
+      </div>
+    </section>
+  </ion-header>
+  <div *ngIf="!imagemFundo">
+    <section class="mx-4">
+      <div class="nameOfPontos">
+        <span><ion-skeleton-text animated style="width: 100px;"></ion-skeleton-text></span>
+        <span><ion-skeleton-text animated style="width: 100px; "></ion-skeleton-text></span>
+      </div>
+      <p class="mb-4 colorGreen fw-bold estatisticas">
+        <ion-skeleton-text animated style="width: 300px; height: 20px;"></ion-skeleton-text>
+      </p>
+      <ion-grid class="container">
+        <ion-row class="ion-align-items-center ion-justify-content-center">
+          <ion-col size="12" size-sm class="p-0 100w border text-center ion-align-self-center">
+            <ion-skeleton-text animated style="height: 100%"></ion-skeleton-text>
+          </ion-col>
+          <ion-col size="12" size-sm class="p-0 100w border text-center ion-align-self-center">
+            <ion-skeleton-text animated style="height: 100%"></ion-skeleton-text>
+          </ion-col>
+          <ion-col size="12" size-sm class="p-0 100w border text-center ion-align-self-center">
+            <ion-skeleton-text animated style="height: 100%"></ion-skeleton-text>
+          </ion-col>
+
+        </ion-row>
+      </ion-grid>
+    </section>
+    <section class="menu-footer mt-5" *ngIf="!imagemFundo">
+      <div class="menu-footer-container">
+        <div class="option-menu" (click)="navegar('solicitar-coleta')">
+          <ion-skeleton-text animated style="width: 200px; height: 20px"></ion-skeleton-text>
+        </div>
+        <div class="option-menu" (click)="navegar('historico')">
+          <ion-skeleton-text animated style="width: 200px; height: 20px"></ion-skeleton-text>
+        </div>
+        <div class="option-menu" (click)="navegar('/tabs/tab3')">
+          <ion-skeleton-text animated style="width: 200px; height: 20px"></ion-skeleton-text>
+        </div>
+        <div class="option-menu">
+          <ion-skeleton-text animated style="width: 200px;"></ion-skeleton-text>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div *ngIf="imagemFundo">
+    <section class="mx-4">
+      <div class="nameOfPontos">
+        <span>{{tabInfo.informacoesDoUsuario.firtsName}}</span>
+        <span>Pontos: {{tabInfoPontos.pontos}}</span>
+      </div>
+      <p class="mb-4 colorGreen fw-bold estatisticas">Suas Estatísticas</p>
+      <ion-grid class="container">
+        <ion-row class="ion-align-items-center ion-justify-content-center">
+          <ion-col size="12" size-sm class="p-0 100w garrafas border text-center ion-align-self-center">
+            <div class="information">
+              <span class="titulo">Garrafas</span>
+              <span>{{tabInfoPontos.quantGarrafa}} unid.</span>
+            </div>
+          </ion-col>
+          <ion-col size="12" size-sm class="border latinha text-center ion-align-self-center">
+            <div class="information">
+              <span class="titulo">Latinhas</span>
+              <span>{{tabInfoPontos.quantLatinha}} unid.</span>
+            </div>
+          </ion-col>
+          <ion-col size="12" size-sm class="border oleo text-center ion-align-self-center">
+            <div class="information">
+              <span class="titulo">Oleo</span>
+              <span>{{tabInfoPontos.quantOleo}} L</span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </section>
+    <section class="menu-footer mt-5">
+      <div class="menu-footer-container">
+        <div class="option-menu" (click)="navegar('tabs/solicitar-coleta')">
+          <span class="icon-footer">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14zM6 7v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6zm8 7v4h-4v-4H8l4-4 4 4h-2z" />
+            </svg>
+          </span>
+          <span>Solicitar coleta</span>
+        </div>
+        <div class="option-menu" (click)="navegar('tabs/historico')">
+          <span class="icon-footer">
+            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13 3C8.03 3 4 7.03 4 12H1L4.89 15.89L4.96 16.03L9 12H6C6 8.13 9.13 5 13 5C16.87 5 20 8.13 20 12C20 15.87 16.87 19 13 19C11.07 19 9.32 18.21 8.06 16.94L6.64 18.36C8.27 19.99 10.51 21 13 21C17.97 21 22 16.97 22 12C22 7.03 17.97 3 13 3ZM12 8V13L16.28 15.54L17 14.33L13.5 12.25V8H12Z"
+                fill="black" />
+            </svg>
+          </span>
+          <span>Histórico</span>
+        </div>
+        <div class="option-menu" (click)="navegar('/tabs/tab3')">
+          <span class="icon-footer">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+              <g>
+                <path d="M0,0h24v24H0V0z" fill="none" />
+                <path
+                  d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" />
+              </g>
+            </svg></span>
+          <span>Configuração</span>
+        </div>
+        <div class="option-menu">
+          <span class="icon-footer">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z" />
+            </svg>
+          </span>
+          <span>Ajuda</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</ion-content>

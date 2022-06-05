@@ -1,0 +1,25 @@
+#x {
+    position: absolute;
+    top: 4px;
+}
+
+ion-icon {
+    position: relative;
+    top: 10px;
+}
+
+ion-img {
+    height: 100%;
+    width: 100%;
+    
+}
+
+textarea:focus {
+    box-shadow: 0 0 0.8em#4F972D;
+    border: gray;
+}
+
+#send {
+    position: relative;
+    top: 3px;
+}

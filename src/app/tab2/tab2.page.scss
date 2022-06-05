@@ -1,0 +1,18 @@
+header{
+    z-index: 1;
+}
+button{
+    background: transparent !important;
+    ion-img{
+        height: 100%;
+        width: 100%;
+    }
+}
+.button:active {
+    transition: all 0.1s;
+    transform: scale(0.9, 0.9);
+}
+
+.logo{
+    width: 4rem;
+}

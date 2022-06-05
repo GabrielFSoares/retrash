@@ -1,0 +1,23 @@
+
+<ion-content>
+  <section>
+    <div class="container-form">
+      <span class="logo">
+        <img src="assets/logoRetrash.png" />
+      </span>
+      <form>
+        <div class="divForm">
+          <label>E-mail</label>
+          <input type="text"  [(ngModel)]="email" name="login"/>
+        </div>
+        <div  class="divForm">
+          <label>Senha</label>
+          <input type="password"  [(ngModel)]="senha" name="senha"/>
+        </div>
+        <!--<span class="esqueceuSenha"  (click)="esqueceuSenha()">Esqueceu a senha?</span>-->
+        <button  (click)="loginUsuario()">ENTRAR</button>
+        <span class="textInscrevase">Novo usuário? <span class="inscreva" [routerLink]="['/cadastro']" >inscreva-se aqui</span></span>
+      </form>
+    </div>
+  </section>
+</ion-content>

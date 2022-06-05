@@ -1,0 +1,97 @@
+<ion-content [fullscreen]="true">
+  <header class="position-fixed bg-white w-100">
+    <div class="container mt-3">
+      <div>
+        <p class="text-center colorGreen fw-bold">{{title}}</p>
+      </div>
+      <div id="x">
+        <a class="text-dark" [routerLink]="['/tabs/tab2']"><ion-icon name="arrow-back" size="large"></ion-icon></a>
+      </div>
+    </div>
+  </header>
+
+  <article class="mt-5 mx-4">
+    <br>
+    <section id="reciclar" class="d-none">
+      <div class="text-center mt-4 mx-3">
+        <p class="colorGreen">O que estamos recolhendo:</p> 
+
+        <div class="row shadow mb-3">
+          <div class="col-6 p-0">
+            <ion-img src="assets/testgarrafa.jpg" class="img rounded"></ion-img>
+          </div>
+          <div class="col-6 my-auto">
+            <h5 class="colorGreen fw-bold">Garrafa Pet</h5>
+            <h5 class="colorGreen">Ganhe 2 pontos a cada unidade</h5>
+          </div>
+        </div>
+
+        <div class="row shadow mb-3">
+          <div class="col-6 p-0">
+            <ion-img src="assets/latinha.jpg" class="img rounded"></ion-img>
+          </div>
+          <div class="col-6 my-auto">
+            <h5 class="colorGreen fw-bold">Latinhas</h5>
+            <h5 class="colorGreen">Ganhe 1 pontos a cada unidade</h5>
+          </div>
+        </div>
+
+        <div class="row shadow mb-3">
+          <div class="col-6 p-0">
+            <ion-img src="assets/oleo.jpg" class="img rounded"></ion-img>
+          </div>
+          <div class="col-6 my-auto">
+            <h5 class="colorGreen fw-bold">Óleo</h5>
+            <h5 class="colorGreen">Ganhe 40 pontos a cada litro</h5>
+          </div>
+        </div>
+
+        <p class="colorGreen mt-5">Obs: Caso o material esteja sujo, pedimos para que lave-os antes de solicitar a coleta, asim você estará facilitando o nosso trabalho.</p> 
+      </div>
+    </section>
+
+    <section id="estatisticas" class="d-none">
+      <div>
+        Em construção
+      </div>
+    </section>
+
+    <section id="funciona" class="d-none">
+      <div>
+        Em construção
+      </div>
+    </section>
+
+    <section id="suporte" class="d-none">
+      <div class="mt-5">
+        <form>
+          <h4 class="mb-3">Nos envie sua mensagem:</h4>
+          <textarea class="form-control" [(ngModel)]="message" rows="5" placeholder="Digite aqui sua mensagem"></textarea>
+
+          <div class="text-center mt-3">
+            <button type="button" class="btn btn-success" (click)="sentMessage()"><ion-icon name="send" id="send"></ion-icon>  Enviar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="text-center mt-5">
+        <h4>Outras opções</h4> 
+      </div>
+
+      <div class="row mt-5 text-center">
+        <div class="col-4">
+          <a href="" class="colorGreen"><ion-icon name="logo-instagram" size="large"></ion-icon></a>
+        </div>
+        <div class="col-4">
+          <a href="" class="colorGreen"><ion-icon name="mail" size="large"></ion-icon></a>
+        </div>
+        <div class="col-4">
+          <a href="" class="colorGreen"><ion-icon name="logo-whatsapp" size="large"></ion-icon></a>
+        </div>
+      </div>
+    </section>
+
+  </article>
+
+</ion-content>
+

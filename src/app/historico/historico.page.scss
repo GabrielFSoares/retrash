@@ -1,0 +1,65 @@
+.div1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itens{
+    display: flex;
+    flex-direction: column;
+}
+
+.dataAndPontos{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+.concluido{
+    color: var(--color-green);
+    font-weight: bold;
+}
+.andamento{
+    color: var(--color-andamento);
+    font-weight: bold;
+
+}
+.pendente{
+    color: var(--color-pendente);
+
+    font-weight: bold;
+}
+
+.icon{
+    position: absolute;
+    top: 16px;
+    padding-left: 10px;
+    cursor: pointer;
+    z-index: 1;
+    #icon-arrow {
+      fill:  var(--color-green);
+     
+    }
+}
+.dataEntrega{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+ion-title{
+    text-align: center;
+    --color: var(--color-green)
+}
+
+ion-toolbar{
+    position: relative;
+}
+
+ion-content{
+    position: relative;
+}
+
+ion-card{
+    --color: black;
+    font-weight:400;
+}

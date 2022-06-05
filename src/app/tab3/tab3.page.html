@@ -1,0 +1,195 @@
+<ion-content [fullscreen]="true">
+  <header class="mb-5">
+    <div class="container row mt-5 mx-auto">
+      <p class="fw-bold colorGreen fs-6 mb-0"><img class="logo" src="assets/logoRetrash.png" /></p>
+      <h1><ion-skeleton-text *ngIf="!firtsName" animated style="width: 30%"></ion-skeleton-text></h1>
+      <h1>{{firtsName}}</h1>
+    </div>
+  </header>
+
+  <article>
+    <section class="container row mx-auto section1" *ngIf="!info">
+      <div>
+        <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+      </div>
+      <div>
+        <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+      </div>
+      <div>
+        <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+      </div>
+      <div>
+        <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text> 
+      </div>
+      <div>
+        <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+      </div>
+      <div>
+        <ion-skeleton-text animated style="width: 20%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+      </div>
+    </section>
+
+    <section class="container row mx-auto section1" *ngFor="let infor of info">
+      <div>
+        <p class="fw-bold colorGreen fs-6 mb-0">Nome</p>
+        <p class="fs-6 informacaoUsuario">
+          <input type="text" id="name" [(ngModel)]="name"  readonly="true">
+          <ion-icon class="icont" name="create-outline" *ngIf="visible1" (click)="edit('name')"></ion-icon>
+          <ion-icon class="icont" name="checkmark-outline" *ngIf="!visible1" (click)="update('name')"></ion-icon>
+        </p>
+      </div>
+      <div>
+        <p class="fw-bold colorGreen fs-6 mb-0">CPF</p>
+        <p class="fs-6 informacaoUsuario"><input type="text" [(ngModel)]="cpf" readonly="true"></p>
+      </div>
+      <div>
+        <p class="fw-bold colorGreen fs-6 mb-0">E-mail</p>
+        <p class="fs-6 informacaoUsuario">
+          <input type="text" id="email" [(ngModel)]="email" readonly="true">
+          <ion-icon class="icont" name="create-outline" *ngIf="visible2" (click)="edit('email')"></ion-icon>
+          <ion-icon class="icont" name="checkmark-outline" *ngIf="!visible2" (click)="update('email')"></ion-icon>
+        </p>
+      </div>
+      <div>
+        <p class="fw-bold colorGreen fs-6 mb-0">Número</p>
+        <p class="fs-6 informacaoUsuario">
+            <input type="text" id="phone" [(ngModel)]="phone" readonly="true"/>
+            <ion-icon class="icont" name="create-outline" *ngIf="visible3" (click)="edit('phone')"></ion-icon>
+            <ion-icon class="icont" name="checkmark-outline" *ngIf="!visible3" (click)="update('phone')"></ion-icon>
+        </p>
+      </div>
+      <div>
+        <p class="fw-bold colorGreen fs-6 mb-0">Endereço</p>
+        <p class="fs-6 informacaoUsuario"><input type="text" [(ngModel)]="address" readonly="true">
+          <ion-icon class="icont" name="create-outline" (click)="open(modalAddress)"></ion-icon>
+        </p>
+      </div>
+      <a class="px-0 pt-2">
+        <div (click)="open(modalPassword)">
+          <p class="fw-bold colorGreen fs-6 mb-4">Alterar Senha</p>
+        </div>
+      </a>
+    </section>
+    
+    <section class="mt-3 mb-5 row justify-content-center">
+      <div class="col-auto">
+        <div (click)="selectOption('perguntas')">
+          <a><ion-icon name="help-circle-outline" size="large"></ion-icon><span>Perguntas frequentes</span></a>
+        </div>    
+        <div (click)="selectOption('termos')">
+          <a><ion-icon name="document-text-outline" size="large"></ion-icon><span>Termos e condições de uso</span></a>
+        </div>  
+        <div (click)="selectOption('sobre')">
+          <a><ion-icon name="information-circle-outline" size="large"></ion-icon><span>Sobre o app</span></a>
+        </div>  
+        <div>
+          <a href="/" class="text-danger" (click)="sair()"><ion-icon name="log-out-outline" size="large"></ion-icon><span>Sair</span></a>
+        </div>  
+      </div>
+    </section>
+  </article>
+
+  <!-- Modal Endereço-->
+  <ng-template #modalAddress let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Endereço</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-6">
+          <ion-item>
+            <ion-label for="cep">CEP: </ion-label>
+            <ion-input (ngModelChange)="recuperarEndereco($event)" id="cep" [(ngModel)]="cep"  type="number"></ion-input>
+          </ion-item>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8">
+          <ion-item>
+            <ion-label for="rua">Rua: </ion-label>
+            <ion-input id="rua" [(ngModel)]="endereco" type="text"></ion-input>
+          </ion-item>
+        </div>
+        <div class="col-4">
+          <ion-item>
+            <ion-label for="numero">N°: </ion-label>
+            <ion-input id="numero" [(ngModel)]="numero" type="number"></ion-input>
+          </ion-item>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <ion-item>
+            <ion-label for="complemento" position="floating">Complemento: </ion-label>
+            <ion-input id="complemento" [(ngModel)]="complemento" type="text"></ion-input>
+          </ion-item>
+        </div>
+        <div class="col-6">
+          <ion-item>
+            <ion-label for="bairro" position="floating">Bairro: </ion-label>
+            <ion-input id="bairro" [(ngModel)]="bairro" type="text"></ion-input>
+          </ion-item>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <ion-item>
+            <ion-label for="localidade" position="floating">Cidade: </ion-label>
+            <ion-input id="localidade" [(ngModel)]="localidade" type="text"></ion-input>
+          </ion-item>
+        </div>
+        <div class="col-6">
+          <ion-item>
+            <ion-label for="uf" position="floating">Estado: </ion-label>
+            <ion-input id="uf" [(ngModel)]="uf" type="text"></ion-input>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-success" (click)="c('Save click'); update('address')">Salvar</button>
+    </div>
+  </ng-template>
+
+   <!-- Modal Alterar Senha-->
+   <ng-template #modalPassword let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title colorGreen fw-bold">Alterar Senha</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <ion-item>
+          <ion-label>Senha atual: </ion-label>
+          <ion-input [(ngModel)]="password" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Nova senha: </ion-label>
+          <ion-input [(ngModel)]="newPassword" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Confirmar senha: </ion-label>
+          <ion-input [(ngModel)]="confirmPassword" type="password"></ion-input>
+        </ion-item>
+      </form>
+    </div>
+    
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-success" (click)="c('Save click'); update('password')">Alterar</button>
+    </div>
+  </ng-template>
+  
+</ion-content>
